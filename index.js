@@ -5,7 +5,7 @@ const server = app.listen(3000, () => {
     console.log("Running");
 });
 
-app.get('/', (req, res) =>{
+app.get('/montagem', (req, res) =>{
     res.send("Hello world!!");
 
 });
