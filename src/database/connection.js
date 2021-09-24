@@ -18,6 +18,7 @@ async function connect() {
     client.release();
 
     global.connection = pool;
+    console.log("Connected");
     return pool.connect();
 }
 
