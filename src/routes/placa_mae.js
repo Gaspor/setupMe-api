@@ -1,21 +1,34 @@
 const express = require("express");
 const router = express.Router();
 const db = require("./../database/connection");
+const {createJson, deleteJson, readJson} = require("./../JSONs/json");
 
 router.get('/placas_mae', async (req, res) => {
-    const query = await db.query("SELECT * FROM placa_mae");
+    const jsonFileName = "placasmae";
     var placas_mae = {};
 
-    for(i = 0; i < query.rowCount; i++){
-        placas_mae[i] = {
-            nome: query.rows[i].nome,
-            marca: query.rows[i].marca,
-            socket: query.rows[i].socket,
-            ddr: query.rows[i].ddr,
-            slotsDeMemoria: query.rows[i].memslots,
-            m2support: query.rows[i].m2support,
-            link: query.rows[i].productlink
-        }        
+    try {
+        const query = await db.query("SELECT * FROM placa_mae");
+    
+        for(i = 0; i < query.rowCount; i++){
+            placas_mae[i] = {
+                nome: query.rows[i].nome,
+                marca: query.rows[i].marca,
+                socket: query.rows[i].socket,
+                ddr: query.rows[i].ddr,
+                slotsDeMemoria: query.rows[i].memslots,
+                m2support: query.rows[i].m2support,
+                link: query.rows[i].productlink
+            }        
+        }
+
+        deleteJson(jsonFileName);
+        createJson(jsonFileName, placas_mae);
+        
+    } catch {
+        console.log("Error: Database Connection");
+        placas_mae = readJson(jsonFileName);
+        
     }
     
     res.send(JSON.stringify(placas_mae));
