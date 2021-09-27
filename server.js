@@ -1,10 +1,16 @@
 const express = require("express");
 const app = express();
-const processador = require("./src/routes/processador");
+const armazenamento = require("./src/routes/armazenamento");
 const placa_mae = require("./src/routes/placa_mae");
+const placa_video = require("./src/routes/placa_video");
+const processador = require("./src/routes/processador");
+const ram = require("./src/routes/ram");
 
-app.use("/", processador);
+app.use("/", armazenamento);
 app.use("/", placa_mae);
+app.use("/", placa_video);
+app.use("/", processador);
+app.use("/", ram);
 
 const server = app.listen(process.env.PORT || 3000, err => {
     if(err) {
