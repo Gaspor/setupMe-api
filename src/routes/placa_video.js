@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require("./../database/connection");
 const {createJson, deleteJson, readJson} = require("./../JSONs/json");
 
-router.get('/placa_video', async (req, res) => {
+router.get('/placas_video', async (req, res) => {
     const jsonFileName = "placasvideo";
     var placa_video = {};
 

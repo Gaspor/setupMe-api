@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require("./../database/connection");
 const {createJson, deleteJson, readJson} = require("./../JSONs/json");
 
-router.get('/ram', async (req, res) => {
+router.get('/rams', async (req, res) => {
     const jsonFileName = "ram";
     var rams = {};
 
