@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const db = require("./../database/connection");
-const {createJson, deleteJson, readJson} = require("./../JSONs/json");
+const {createJson, deleteJson, readJson} = require("./../../resources/json");
 
 router.get('/processadores', async (req, res) => {
     const jsonFileName = "processadores";
