@@ -13,6 +13,10 @@ router.get('/placas_video', async (req, res) => {
         for(i = 0; i < query.rowCount; i++){
             placa_video[i] = {
                 nome: query.rows[i].nome,
+                marca: query.rows[i].marca,
+                gbs: query.rows[i].gb,
+                wattsFonte: query.rows[i].fonte,
+                link: query.rows[i].productlink
                 
             }        
         }
