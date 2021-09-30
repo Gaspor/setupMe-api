@@ -22,8 +22,7 @@ router.get('/rams', async (req, res) => {
             }        
         }
 
-        deleteJson(jsonFileName);
-        createJson(jsonFileName, rams);
+        await createJson(jsonFileName, rams);
         
     } catch {
         console.log("Error: Database Connection");

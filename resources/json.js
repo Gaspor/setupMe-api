@@ -1,8 +1,10 @@
 const fs = require("fs");
 
-function createJson(nameFile, json){
+async function createJson(nameFile, json){
+    await deleteJson(nameFile);
+
     fs.writeFileSync(`./resources/jsons/${nameFile}.json`, JSON.stringify(json), 'utf8', (err) => {
-        if (err) throw err;
+        if (err) return;
         console.log("Created json!");
     });
 
@@ -13,12 +15,12 @@ function readJson(nameFile){
     
 }
 
-function deleteJson(nameFile){
+async function deleteJson(nameFile){
     fs.rm(`./resources/jsons/${nameFile}.json`, (err) => {
-        if (err) throw err;
+        if (err) return;
         console.log("Deleted json!");
     })
 
 }
 
-module.exports = {createJson, deleteJson, readJson}
+module.exports = {createJson, readJson}

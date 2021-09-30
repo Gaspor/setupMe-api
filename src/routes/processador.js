@@ -20,8 +20,7 @@ router.get('/processadores', async (req, res) => {
             }        
         }
 
-        deleteJson(jsonFileName);
-        createJson(jsonFileName, processadores);
+        await createJson(jsonFileName, processadores);
         
     } catch {
         console.log("Error: Database Connection");

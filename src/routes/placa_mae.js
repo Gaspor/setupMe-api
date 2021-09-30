@@ -22,8 +22,7 @@ router.get('/placas_mae', async (req, res) => {
             }        
         }
 
-        deleteJson(jsonFileName);
-        createJson(jsonFileName, placas_mae);
+        await createJson(jsonFileName, placas_mae);
         
     } catch {
         console.log("Error: Database Connection");

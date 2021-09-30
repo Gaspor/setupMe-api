@@ -21,8 +21,7 @@ router.get('/placas_video', async (req, res) => {
             }        
         }
 
-        deleteJson(jsonFileName);
-        createJson(jsonFileName, placa_video);
+        await createJson(jsonFileName, placa_video);
         
     } catch {
         console.log("Error: Database Connection");
