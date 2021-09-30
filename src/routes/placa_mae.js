@@ -19,18 +19,18 @@ router.get('/placas_mae', async (req, res) => {
                 slotsDeMemoria: query.rows[i].memslots,
                 m2support: query.rows[i].m2support,
                 link: query.rows[i].productlink
-            }        
+            }
         }
 
-        await createJson(jsonFileName, placas_mae);
+        //await createJson(jsonFileName, placas_mae);
         
-    } catch {
+    } catch (error){
         console.log("Error: Database Connection");
-        placas_mae = readJson(jsonFileName);
+        //placas_mae = readJson(jsonFileName);
         
     }
     
-    res.send(JSON.stringify(placas_mae));
+    res.json(placas_mae);
 });
 
 module.exports = router;
