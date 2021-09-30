@@ -28,7 +28,7 @@ router.get('/processadores', async (req, res) => {
 
     }
     
-    res.json(JSON.stringify(processadores));
+    res.send(JSON.stringify(processadores));
 });
 
 module.exports = router;

@@ -25,7 +25,7 @@ router.get('/armazenamentos', async (req, res) => {
 
     }
     
-    res.json(JSON.stringify(armazenamentos));
+    res.send(JSON.stringify(armazenamentos));
 });
 
 module.exports = router;

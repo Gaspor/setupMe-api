@@ -29,7 +29,7 @@ router.get('/placas_video', async (req, res) => {
 
     }
     
-    res.json(JSON.stringify(placa_video));
+    res.send(JSON.stringify(placa_video));
 });
 
 module.exports = router;
