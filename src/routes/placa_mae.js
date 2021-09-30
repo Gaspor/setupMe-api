@@ -30,7 +30,7 @@ router.get('/placas_mae', async (req, res) => {
         
     }
     
-    res.send(JSON.stringify(placas_mae));
+    res.json(JSON.stringify(placas_mae));
 });
 
 module.exports = router;
