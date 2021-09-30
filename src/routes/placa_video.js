@@ -1,10 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const db = require("./../database/connection");
-const {createJson, deleteJson, readJson} = require("./../../resources/json");
 
 router.get('/placas_video', async (req, res) => {
-    const jsonFileName = "placasvideo";
     var placa_video = {};
 
     try{
@@ -20,12 +18,9 @@ router.get('/placas_video', async (req, res) => {
                 
             }        
         }
-
-        await createJson(jsonFileName, placa_video);
         
     } catch {
         console.log("Error: Database Connection");
-        placa_video = readJson(jsonFileName);
 
     }
     

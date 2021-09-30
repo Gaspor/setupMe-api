@@ -1,10 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const db = require("./../database/connection");
-const {createJson, deleteJson, readJson} = require("./../../resources/json");
 
 router.get('/rams', async (req, res) => {
-    const jsonFileName = "ram";
     var rams = {};
 
     try{
@@ -21,12 +19,9 @@ router.get('/rams', async (req, res) => {
                 
             }        
         }
-
-        await createJson(jsonFileName, rams);
         
     } catch {
         console.log("Error: Database Connection");
-        rams = readJson(jsonFileName);
 
     }
     

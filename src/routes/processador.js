@@ -1,10 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const db = require("./../database/connection");
-const {createJson, deleteJson, readJson} = require("./../../resources/json");
 
 router.get('/processadores', async (req, res) => {
-    const jsonFileName = "processadores";
     var processadores = {};
 
     try{
@@ -19,12 +17,9 @@ router.get('/processadores', async (req, res) => {
                 link: query.rows[i].productlink
             }        
         }
-
-        await createJson(jsonFileName, processadores);
         
     } catch {
         console.log("Error: Database Connection");
-        processadores = readJson(jsonFileName);
 
     }
     
