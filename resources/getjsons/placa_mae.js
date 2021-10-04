@@ -1,15 +1,12 @@
-const express = require("express");
-const router = express.Router();
-const db = require("./../database/connection");
+const db = require("./../../src/database/connection");
 
-router.get('/placas_mae', async (req, res) => {
-    var placas_mae = [];
+async function getMotherboards() {
+    var itens = [];
 
     try {
-        const query = await db.query("SELECT * FROM placa_mae");
-    
+        const query = await db.query("SELECT * FROM placa_mae");    
         for(i = 0; i < query.rowCount; i++) {
-            placas_mae.push({
+            itens.push({
                 nome: query.rows[i].nome,
                 marca: query.rows[i].marca,
                 socket: query.rows[i].socket,
@@ -22,9 +19,11 @@ router.get('/placas_mae', async (req, res) => {
         
     } catch (error){
         console.log("Error: Database Connection");
+        return { json: "Error", status: 500 };
         
     }
-    res.json(placas_mae);
-});
 
-module.exports = router;
+    return { json: itens, status: 200 };
+}
+
+module.exports = { getMotherboards }
