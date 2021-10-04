@@ -3,13 +3,13 @@ const router = express.Router();
 const db = require("./../database/connection");
 
 router.get('/rams', async (req, res) => {
-    var rams = {};
+    var rams = [];
 
     try{
         const query = await db.query("SELECT * FROM memram");
 
         for(i = 0; i < query.rowCount; i++){
-            rams[i] = {
+            rams.push({
                 nome: query.rows[i].nome,
                 marca: query.rows[i].marca,
                 gbs: query.rows[i].gb,
@@ -17,7 +17,7 @@ router.get('/rams', async (req, res) => {
                 mhz: query.rows[i].mhz,
                 link: query.rows[i].productlink,
                 
-            }        
+            });
         }
         
     } catch {

@@ -7,12 +7,13 @@ const placa_video = require("./src/routes/placa_video");
 const processador = require("./src/routes/processador");
 const ram = require("./src/routes/ram");
 
+app.use(cors());
 app.use("/", armazenamento);
 app.use("/", placa_mae);
 app.use("/", placa_video);
 app.use("/", processador);
 app.use("/", ram);
-app.use(cors());
+
 
 const server = app.listen(process.env.PORT || 3000, err => {
     if(err) {
