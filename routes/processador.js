@@ -3,7 +3,7 @@ const app = express();
 const getJson = require("./../resources/getjsons/processador");
 
 app.get('/processadores', async (req, res) => {
-    var processadores = await getJson.getCPU();
+    const processadores = await getJson.getCPU();
 
     res.json(processadores.json);
     res.status(processadores.status);
