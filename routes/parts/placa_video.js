@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const getJson = require("./../resources/getjsons/placa_video");
+const getJson = require("./../../resources/getjsons/placa_video");
 
 app.get('/placas_video', async (req, res) => {
     const placa_video = await getJson.getGPU();

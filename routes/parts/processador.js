@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const getJson = require("./../resources/getjsons/processador");
+const getJson = require("./../../resources/getjsons/processador");
 
 app.get('/processadores', async (req, res) => {
     const processadores = await getJson.getCPU();

@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const getJson = require("./../resources/getjsons/ram");
+const getJson = require("./../../resources/getjsons/ram");
 
 app.get('/rams', async (req, res) => {
     const rams = await getJson.getRam();

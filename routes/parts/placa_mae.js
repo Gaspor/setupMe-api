@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const getJson = require("./../resources/getjsons/placa_mae");
+const getJson = require("./../../resources/getjsons/placa_mae");
 
 app.get('/placas_mae', async (req, res) => {
     const placas_mae = await getJson.getMotherboards();
