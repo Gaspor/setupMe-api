@@ -7,5 +7,8 @@ apiRouter.use('/', require('./parts/placa_video'));
 apiRouter.use('/', require('./parts/processador'));
 apiRouter.use('/', require('./parts/ram'));
 apiRouter.use('/', require('./games/fortnite'));
+apiRouter.use('/montagem', require('./mounting/pro-basica'));
+apiRouter.use('/montagem', require('./mounting/pro-media.js'));
+apiRouter.use('/montagem', require('./mounting/pro-avancada.js'));
 
 module.exports = apiRouter;
