@@ -7,6 +7,7 @@ apiRouter.use('/', require('./parts/armazenamento'));
 apiRouter.use('/', require('./parts/placa_video'));
 apiRouter.use('/', require('./parts/processador'));
 apiRouter.use('/', require('./parts/ram'));
+apiRouter.use('/', require('./parts/fonte'));
 
 /* Games */
 apiRouter.use('/games', require('./games/apex'));
