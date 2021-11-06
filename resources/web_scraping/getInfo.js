@@ -2,13 +2,13 @@ const pupp = require('puppeteer');
 const db = require('./../../src/database/updatePrice');
 const chromeOptions = {
     headless: false,
-    /*defaultViewport: null,
+    defaultViewport: null,
     args: [
         "--incognito",
         "--no-sandbox",
         "--single-process",
         "--no-zygote"
-    ],*/
+    ],
 };
 
 async function getPriceValue(itens, table) {
