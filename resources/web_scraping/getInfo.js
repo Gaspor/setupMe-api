@@ -1,7 +1,7 @@
 const pupp = require('puppeteer');
 const db = require('./../../src/database/updatePrice');
 const chromeOptions = {
-    headless: false,
+    headless: true,
     defaultViewport: null,
     args: [
         "--incognito",
