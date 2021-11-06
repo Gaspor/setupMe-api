@@ -17,6 +17,7 @@ async function getPriceValue(itens, table) {
     const page = await browser.newPage();
     try {
         for(i = 0; i < itens.length; i++) {
+            await new Promise(r => setTimeout(() => r(), 3000));
             page.goto(itens[i].link);
             await page.waitForNavigation();
 
@@ -32,6 +33,7 @@ async function getPriceValue(itens, table) {
     } catch {
 
     } finally {
+        console.log(table + " is over!");
         browser.close();
     }
 }

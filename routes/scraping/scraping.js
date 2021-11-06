@@ -8,6 +8,8 @@ app.get('/scraping', async (req, res) => {
 
     ws.getPriceValue(json, "armazenamento");
 
+    res.send("<marquee><h1> There's nothing around here! </h1></marquee>");
+
 });
 
 module.exports = app;
