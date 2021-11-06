@@ -16,7 +16,7 @@ async function getPriceValue(itens, table) {
     const browser = await pupp.launch(chromeOptions);
     const page = await browser.newPage();
     try {
-        for(i = 1; i < itens.length; i++) {
+        for(i = 0; i < itens.length; i++) {
             page.goto(itens[i].link);
             await page.waitForNavigation();
 
