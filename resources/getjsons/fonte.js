@@ -10,7 +10,8 @@ async function getFonte() {
                 nome: query.rows[i].nome,
                 marca: query.rows[i].marca,
                 watts: query.rows[i].watts,
-                link: query.rows[i].productlink
+                link: query.rows[i].productlink,
+                preco: query.rows[i].valor
 
             });
         }

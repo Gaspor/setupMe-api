@@ -11,7 +11,8 @@ async function getHD() {
                 marca: query.rows[i].marca,
                 gb: query.rows[i].gb,
                 m2: query.rows[i].m2,
-                link: query.rows[i].productlink
+                link: query.rows[i].productlink,
+                preco: query.rows[i].valor
 
             });
         }

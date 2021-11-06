@@ -12,8 +12,11 @@ async function getMotherboards() {
                 socket: query.rows[i].socket,
                 ddr: query.rows[i].ddr,
                 slotsDeMemoria: query.rows[i].memslots,
+                ramMaxima: query.rows[i].ram_maxima,
                 m2support: query.rows[i].m2support,
-                link: query.rows[i].productlink
+                link: query.rows[i].productlink,
+                preco: query.rows[i].valor
+
             });
         }
         

@@ -12,7 +12,8 @@ async function getRam() {
                 gbs: query.rows[i].gb,
                 ddr: query.rows[i].ddr,
                 mhz: query.rows[i].mhz,
-                link: query.rows[i].productlink
+                link: query.rows[i].productlink,
+                preco: query.rows[i].valor
 
             });
         }

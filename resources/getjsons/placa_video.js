@@ -11,7 +11,8 @@ async function getGPU() {
                 marca: query.rows[i].marca,
                 gbs: query.rows[i].gb,
                 wattsFonte: query.rows[i].fonte,
-                link: query.rows[i].productlink
+                link: query.rows[i].productlink,
+                preco: query.rows[i].valor
 
             });
         }

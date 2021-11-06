@@ -11,7 +11,8 @@ async function getCPU() {
                 marca: query.rows[i].marca,
                 socket: query.rows[i].socket,
                 mhzMaximoDaMemoria: query.rows[i].mhzmx,
-                link: query.rows[i].productlink
+                link: query.rows[i].productlink,
+                preco: query.rows[i].valor
 
             });
         }
