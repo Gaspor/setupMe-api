@@ -12,7 +12,7 @@ const chromeOptions = {
 };
 
 async function getPriceValue(itens, table) {
-    /*const browser = await pupp.launch(chromeOptions);
+    const browser = await pupp.launch(chromeOptions);
     const page = await browser.newPage();
     try {
         for(i = 1; i < itens.length; i++) {
@@ -30,7 +30,9 @@ async function getPriceValue(itens, table) {
 
     } catch {
 
-    }*/
+    } finally {
+        browser.close();
+    }
 }
 
 module.exports = { getPriceValue }
