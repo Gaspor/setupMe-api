@@ -7,7 +7,8 @@ const chromeOptions = {
         "--incognito",
         "--no-sandbox",
         "--single-process",
-        "--no-zygote"
+        "--no-zygote",
+        "--disabled-setupid-sandbox"
     ],
 };
 
