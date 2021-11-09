@@ -28,6 +28,6 @@ apiRouter.use('/montagem', require('./mounting/pro-media.js'));
 apiRouter.use('/montagem', require('./mounting/pro-avancada.js'));
 
 
-apiRouter.use('/', require('./scraping/scraping.js'));
+apiRouter.use('/scraping', require('./scraping/scraping.js'));
 
 module.exports = apiRouter;
