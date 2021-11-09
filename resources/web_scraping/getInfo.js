@@ -13,8 +13,10 @@ const chromeOptions = {
 };
 
 async function getPriceValue(itens, table) {
+    console.log("Starting " + table);
     const browser = await pupp.launch(chromeOptions);
     const page = await browser.newPage();
+
     try {
         for(i = 0; i < itens.length; i++) {
             await new Promise(r => setTimeout(() => r(), 3000));
@@ -22,15 +24,22 @@ async function getPriceValue(itens, table) {
             await page.waitForNavigation();
 
             var price = await page.evaluate(element => {
-                return element.textContent;
+                return element?.textContent;
             }, (await page.$x('//*[@itemprop="price"]'))[0]);
             
-            price = parseFloat(price.replace(",", ".").replace("R$", ""))
+            if (price != undefined) {
+                price = parseFloat(price.replace(",", ".").replace("R$", ""))
+                
+            } else {
+                price = 0;
+            }
+
+            console.log(price);
             db.updatePrice(table, price, itens[i].link);
 
         }
-
     } catch {
+
 
     } finally {
         console.log(table + " is over!");
