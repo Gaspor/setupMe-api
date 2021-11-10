@@ -39,7 +39,9 @@ async function getPriceValue(itens, table) {
 
         }
     } catch {
-
+        /* TO DO
+            Send Error Message
+        */ 
 
     } finally {
         console.log(table + " is over!");
