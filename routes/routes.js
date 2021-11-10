@@ -30,4 +30,7 @@ apiRouter.use('/montagem', require('./mounting/pro-avancada.js'));
 
 apiRouter.use('/scraping', require('./scraping/scraping.js'));
 
+
+apiRouter.use('/compa', require('./compatibility/processador.js'));
+
 module.exports = apiRouter;
