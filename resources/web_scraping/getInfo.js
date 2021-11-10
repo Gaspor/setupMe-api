@@ -28,7 +28,7 @@ async function getPriceValue(itens, table) {
             }, (await page.$x('//*[@itemprop="price"]'))[0]);
             
             if (price != undefined) {
-                price = parseFloat(price.replace(",", ".").replace("R$", ""))
+                price = parseFloat(price.replace(".", "").replace(",", ".").replace("R$", ""))
                 
             } else {
                 price = 0;
