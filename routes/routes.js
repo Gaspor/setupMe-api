@@ -32,5 +32,7 @@ apiRouter.use('/scraping', require('./scraping/scraping.js'));
 
 
 apiRouter.use('/compatibility', require('./compatibility/processador.js'));
+apiRouter.use('/compatibility', require('./compatibility/ram.js'));
+apiRouter.use('/compatibility', require('./compatibility/placa_mae.js'));
 
 module.exports = apiRouter;
