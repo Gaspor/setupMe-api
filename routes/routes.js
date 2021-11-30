@@ -22,7 +22,7 @@ apiRouter.use('/games', require('./games/minecraft'));
 apiRouter.use('/games', require('./games/valorant'));
 
 
-/* Mounting */
+/* Building */
 apiRouter.use('/montagem', require('./mounting/pro-basica'));
 apiRouter.use('/montagem', require('./mounting/pro-media.js'));
 apiRouter.use('/montagem', require('./mounting/pro-avancada.js'));
