@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "npx eslint server.js && npx nodemon",
+    "start": "node server.js",
+    "dev": "npx eslint server.js && npx nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,7 +24,7 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "pg": "^8.7.1",
-    "puppeteer": "^11.0.0",
+    "puppeteer": "^13.3.1",
     "request": "^2.88.2"
   },
   "engines": {
