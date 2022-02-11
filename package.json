@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "npx eslint server.js && npx nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -28,5 +28,8 @@
   },
   "engines": {
     "node": "14.16.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.8.0"
   }
 }

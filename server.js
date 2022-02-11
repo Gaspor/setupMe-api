@@ -5,7 +5,7 @@ const app = express();
 app.use(cors());
 app.use(require('./routes/routes'));
 
-const server = app.listen(process.env.PORT || 3000, err => {
+app.listen(process.env.PORT || 3000, err => {
     if(err) {
         console.log("Error: " , err);
         return;    
